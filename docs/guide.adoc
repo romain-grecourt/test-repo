@@ -1,0 +1,34 @@
+= A Test Document
+
+Overview of A Test Document
+
+== Getting Started
+
+[source,xml]
+.Maven Dependencies
+----
+<dependency>
+    <groupId>com.foo.bar</groupId>
+    <artifactId>bar-core</artifactId>
+    <version>1.0.1</version>
+</dependency>
+----
+
+
+[source,sh]
+.Java 9 Required
+----
+$ java -version
+java version "9-ea"
+Java(TM) SE Runtime Environment (build 9-ea+155)
+Java HotSpot(TM) 64-Bit Server VM (build 9-ea+155, mixed mode)
+----
+
+== Second Section
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+== Third Section
+
