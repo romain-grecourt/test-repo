@@ -13,7 +13,7 @@ import java.net.URI;
  */
 public class Main {
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://localhost:8080/myapp/";
+    public static final String BASE_URI = "http://0.0.0.0:8080/myapp/";
 
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -37,9 +37,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         final HttpServer server = startServer();
         System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
-        System.in.read();
-        server.stop();
+                + "%sapplication.wadl", BASE_URI));
+        try {
+            server.start();
+            System.out.println("Press CTRL^C to exit..");
+            Thread.currentThread().join();
+        } catch (Exception e) {
+            System.out.println(String.format("There was an error while starting Grizzly HTTP server.\n%s", e.getLocalizedMessage()));
+        }
     }
 }
 
