@@ -27,5 +27,5 @@ deploy:
         username: $DOCKER_ID_USER
         password: $DOCKER_ID_PASSWORD
         tag: $DOCKER_ID_USER/simple-service
-        repository: $DOCKER_ID_USER/dev/simple-service
+        repository: cloud.docker.com/$DOCKER_ID_USER/dev/simple-service
 
