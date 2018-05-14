@@ -20,3 +20,12 @@ build:
     - internal/docker-build:
       dockerfile: simple-service/target/Dockerfile
       image-name: simple-service
+
+deploy:
+  steps:
+    - internal/docker-push:
+        username: $DOCKER_HUB_USERNAME
+        password: $DOCKER_HUB_PASSWORD
+        tag: simple-service
+        repository: barchetta/dev
+
