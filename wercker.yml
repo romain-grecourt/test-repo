@@ -24,8 +24,8 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-        username: $DOCKER_HUB_USERNAME
-        password: $DOCKER_HUB_PASSWORD
-        tag: simple-service
-        repository: barchetta/dev
+        username: $DOCKER_ID_USER
+        password: $DOCKER_ID_PASSWORD
+        tag: $DOCKER_ID_USER/simple-service
+        repository: $DOCKER_ID_USER/dev/simple-service
 
