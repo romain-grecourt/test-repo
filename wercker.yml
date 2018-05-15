@@ -20,6 +20,7 @@ build:
     - internal/docker-build:
       dockerfile: simple-service/target/Dockerfile
       image-name: simple-service
+      tag: simple-service
       # tag: latest
 
 deploy:
