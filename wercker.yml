@@ -2,7 +2,7 @@
 # Docker Hub https://hub.docker.com/_/openjdk/
 # Read more about containers on our dev center
 # http://devcenter.wercker.com/docs/containers/index.html
-box: openjdk:8-jdk
+# box: openjdk:8-jdk
 
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
@@ -13,18 +13,18 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     # https://github.com/wercker/step-maven
-    - wercker/maven:
-        goals: install
-        cache_repo: true
-        version: 3.5.2
+    # - wercker/maven:
+    #     goals: install
+    #     cache_repo: true
+    #     version: 3.5.2
     - internal/docker-build:
-        dockerfile: simple-service/target/Dockerfile
-        image-name: my-new-image
+        dockerfile: Dockerfile
+        image-name: helloworld
         nocache: true
     - internal/docker-push:
-        image-name: my-new-image
+        image-name: helloworld
         username: $USERNAME
         password: $PASSWORD
-        repository: docker.io/$USERNAME/simple-service
+        repository: docker.io/$USERNAME/helloworld
         tag: latest
 
