@@ -20,6 +20,7 @@ build:
     - internal/docker-build:
         dockerfile: simple-service/target/Dockerfile
         image-name: my-new-image
+        nocache: true
     - internal/docker-push:
         image-name: my-new-image
         username: $USERNAME
