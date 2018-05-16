@@ -20,13 +20,19 @@ build:
     - internal/docker-build:
       dockerfile: simple-service/target/Dockerfile
       image-name: simple-service
-
-deploy:
-  steps:
     - internal/docker-push:
         image-name: simple-service
         username: $DOCKER_ID_USER
         password: $DOCKER_ID_PASSWORD
         repository: $DOCKER_ID_USER/simple-service
         tag: latest
+
+#deploy:
+#  steps:
+#    - internal/docker-push:
+#        image-name: simple-service
+#        username: $DOCKER_ID_USER
+#        password: $DOCKER_ID_PASSWORD
+#        repository: $DOCKER_ID_USER/simple-service
+#        tag: latest
 
