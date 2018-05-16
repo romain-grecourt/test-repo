@@ -18,7 +18,8 @@ build:
         cache_repo: true
         version: 3.5.2
     - internal/docker-build:
-        dockerfile: simple-service/target/Dockerfile
+        # dockerfile: simple-service/target/Dockerfile
+        dockerfile: Dockerfile
         image-name: helloworld
         nocache: true
     - internal/docker-push:

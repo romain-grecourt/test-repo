@@ -1,2 +1,3 @@
-FROM alpine  
-CMD ["echo", "hello world"] 
+FROM alpine
+copy README.md /
+CMD [ "cat", "/README.md" ]
