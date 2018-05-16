@@ -13,12 +13,12 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     # https://github.com/wercker/step-maven
-    # - wercker/maven:
-    #     goals: install
-    #     cache_repo: true
-    #     version: 3.5.2
+    - wercker/maven:
+        goals: install
+        cache_repo: true
+        version: 3.5.2
     - internal/docker-build:
-        dockerfile: Dockerfile
+        dockerfile: src/main/Dockerfile
         image-name: helloworld
         nocache: true
     - internal/docker-push:
