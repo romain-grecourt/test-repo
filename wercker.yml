@@ -19,9 +19,9 @@ build:
         version: 3.5.2
     - internal/docker-build:
         dockerfile: simple-service/target/Dockerfile
-        image-name: simple-service
+        image-name: my-new-image
     - internal/docker-push:
-        image-name: simple-service
+        image-name: my-new-image
         username: $USERNAME
         password: $PASSWORD
         repository: docker.io/$USERNAME/simple-service
