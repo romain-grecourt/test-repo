@@ -14,16 +14,16 @@ build:
   steps:
     # https://github.com/wercker/step-maven
     - wercker/maven:
-      goals: install
-      cache_repo: true
-      version: 3.5.2
+        goals: install
+        cache_repo: true
+        version: 3.5.2
     - internal/docker-build:
-      dockerfile: simple-service/target/Dockerfile
-      image-name: simple-service
+        dockerfile: simple-service/target/Dockerfile
+        image-name: simple-service
     - internal/docker-push:
         image-name: simple-service
-        username: $DOCKER_ID_USER
-        password: $DOCKER_ID_PASSWORD
-        repository: docker.io/$DOCKER_ID_USER/simple-service
+        username: $USERNAME
+        password: $PASSWORD
+        repository: docker.io/$USERNAME/simple-service
         tag: latest
 
